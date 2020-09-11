@@ -13,9 +13,12 @@ router.get('/delete',(req,res, next)=>{
   res.send('Delete data');
 })
 router.get('/update',(req,res, next)=>{
-  res.send('Update data');
+  res.render('edit');
 })
 router.post('/add',(req,res, next)=>{
+  res.send(req.body)
+})
+router.post('/update',(req,res, next)=>{
   res.send(req.body)
 })
 
