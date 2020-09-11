@@ -15,5 +15,8 @@ router.get('/delete',(req,res, next)=>{
 router.get('/update',(req,res, next)=>{
   res.send('Update data');
 })
+router.post('/add',(req,res, next)=>{
+  res.send(req.body)
+})
 
 module.exports = router;

@@ -14,3 +14,7 @@ table,tr,th,td{
 th,td{
   padding:1rem;
 }
+
+nav{
+  padding:1rem 1rem 2rem;
+}
