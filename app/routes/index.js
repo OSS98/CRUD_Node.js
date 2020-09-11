@@ -7,7 +7,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/add',(req,res, next)=>{
-  res.send('Adding data');
+  res.render('add');
 })
 router.get('/delete',(req,res, next)=>{
   res.send('Delete data');
