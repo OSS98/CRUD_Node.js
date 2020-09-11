@@ -1,15 +1,35 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
+  <%- include('head') -%> 
   <body>
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
-    <a href="/add">add</a>
-    <a href="/delete">delete</a>
-    <a href="/update">update</a>
+  
+    <hr>
+    <table>
+        <tr>
+          <th>id</th>
+          <th>name</th>
+          <th>age</th>
+          <th>position</th>
+          <th>p_profile</th>
+          <th colspan="3">คำสั่ง</th>
+        </tr>
+        <tr>
+            <!-- test 1 row -->
+            <td>0</td>
+            <td>A</td>
+            <td>22</td>
+            <td>programmer</td>
+            <td><img src="emp_id_1.jpg" alt="emp_id_1.jpg"></td>
+            <td><a href="/add">add</a></td>
+            <td><a href="/delete">delete</a></td>
+            <td><a href="/update">update</a></td>
+        </tr>
+    </table>
     
+    
+    
+
   </body>
 </html>
