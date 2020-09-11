@@ -8,9 +8,9 @@ router.get('/', function(req, res, next) {
     if(err){
       res.redirect('/')
     }
-    res.render('index.ejs',{
+    res.render('index',{
       title:'Welcome to Homepage',
-      employee:result
+      emp:result
     })
   })
 
