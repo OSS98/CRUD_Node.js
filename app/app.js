@@ -3,11 +3,29 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var mysql = require('mysql');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 var app = express();
+
+// DB setup
+const db = mysql.createConnection({
+    host:'localhost',
+    user:'root',
+    password:'',
+    database:'crud_nodejs'
+})
+
+db.connect((err)=>{
+  if(err){
+    throw err;
+  }
+  console.log('Connected to database successfuly')
+})
+
+global.db = db;
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
