@@ -3,7 +3,17 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  let query = "select * from employee";
+  db.query(query,(err,result)=>{
+    if(err){
+      res.redirect('/')
+    }
+    res.render('index.ejs',{
+      title:'Welcome to Homepage',
+      employee:result
+    })
+  })
+
 });
 
 router.get('/add',(req,res, next)=>{
