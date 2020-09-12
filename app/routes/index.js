@@ -9,7 +9,7 @@ router.get("/", function (req, res, next) {
       res.redirect("/");
     }
     res.render("index", {
-      title: "Welcome to Homepage",
+      title: "Homepage",
       emp: result,
     });
   });

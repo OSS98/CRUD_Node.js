@@ -1,20 +1,19 @@
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  
 }
 
-a {
-  color: #00B7FF;
+h1{
+  padding:1rem 0rem 1rem;
 }
 
-table,tr,th,td{
-  border-collapse: collapse;
-  border: 4px solid black;
-}
 th,td{
   padding:1rem;
 }
 
 nav{
-  padding:1rem 1rem 2rem;
+  padding:1rem 1rem 1rem;
+  color: white;
+  background-color:black;
+  margin: 0 0 1rem;
 }
