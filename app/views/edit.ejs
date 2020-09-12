@@ -3,7 +3,8 @@
   <%- include('head') -%>
   <body>
     <%- include('header') -%>
-    <form action="/update" method="post">
+    <form action="/update" method="get">
+      <input type="hidden" name="id" value="<%= emp_id %>">
       <div class="form-group">
         <label for="">Name</label><br>
         <input type="text" name="name" />

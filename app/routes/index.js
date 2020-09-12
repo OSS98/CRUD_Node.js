@@ -41,7 +41,7 @@ router.get("/delete", (req, res, next) => {
 
 // router.get("/delete/:id", (req, res, next) => {
 
-//     let y = req.params.id;
+//     let y = req.query.id;
 //     if(y!=""){
 //       res.send(`this isn't query string: ${y}`)
 //     }
@@ -49,8 +49,11 @@ router.get("/delete", (req, res, next) => {
 
 // });
 
-router.get("/update", (req, res, next) => {
-  res.render("edit");
+router.get("/edit", (req, res, next) => {
+  let id = req.query.id;
+  res.render("edit",{
+      emp_id: id
+  })
 });
 
 router.post("/add", (req, res, next) => {
@@ -71,9 +74,30 @@ router.post("/add", (req, res, next) => {
 
 
 
-router.post("/update", (req, res, next) => {
-  res.send(req.body);
-});
+router.get("/update", (req, res, next) => {
+    let id = req.query.id;
+    let name = req.query.name;
+    let age = req.query.age;
+    let position = req.query.position;
+    let pic = req.query.img;
+    // let data = {
+    //   id: id,
+    //   name: name,
+    //   age: age,
+    //   position: position,
+    //   pic: pic
+    // }
+    // res.send(data);
+    let sql = `UPDATE employee set name = '${name}', age = ${age}, position = '${position}',p_profile = '${pic}' where id = ${id}`
+    db.query(sql,(err)=>{
+      if(err){
+        console.log(err)
+      }else{
+        res.redirect('/')
+      }
+    })
+
+  });
 
 
 module.exports = router;
