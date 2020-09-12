@@ -18,9 +18,37 @@ router.get("/", function (req, res, next) {
 router.get("/add", (req, res, next) => {
   res.render("add");
 });
+
 router.get("/delete", (req, res, next) => {
-  res.send("Delete data");
+    let id = req.query.id;
+    
+    // if(id!=""){
+    //   res.send(`this is query string: ${id}`)
+    // }
+    let sql = `delete from employee where id = ${id}` 
+
+    db.query(sql, (err, result)=>{
+        if(err){
+          res.send(err)
+        }else{
+          res.redirect('/')
+        }
+    })
+
+    
+
 });
+
+// router.get("/delete/:id", (req, res, next) => {
+
+//     let y = req.params.id;
+//     if(y!=""){
+//       res.send(`this isn't query string: ${y}`)
+//     }
+    
+
+// });
+
 router.get("/update", (req, res, next) => {
   res.render("edit");
 });

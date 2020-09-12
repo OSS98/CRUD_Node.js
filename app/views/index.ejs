@@ -14,7 +14,7 @@
         <th>age</th>
         <th>position</th>
         <th>p_profile</th>
-        <th colspan="3">คำสั่ง</th>
+        <th colspan="2">คำสั่ง</th>
       </tr>
       <tr>
         <!-- test 1 row -->
@@ -23,7 +23,7 @@
         <td>22</td>
         <td>programmer</td>
         <td><img src="emp_id_1.jpg" alt="emp_id_1.jpg" /></td>
-        <td><a href="/add">add</a></td>
+        <!-- <td><a href="/add">add</a></td> -->
         <td><a href="/delete">delete</a></td>
         <td><a href="/update">update</a></td>
       </tr>
@@ -38,6 +38,7 @@
           <p><%= item.p_profile %></p>
         </td>
 
+        <!-- <td><a href="/delete/<%= item.id %> ">delete</a></td> -->
         <td><a href="/delete?id=<%= item.id %> ">delete</a></td>
         <td><a href="/update?id=<%= item.id %>">update</a></td>
       </tr>
